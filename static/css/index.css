@@ -751,3 +751,20 @@ a:focus {
 
 
 
+
+/* Abstract card */
+.abstract-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.abstract-card .content p {
+  line-height: 1.8;
+}
+@media screen and (max-width: 768px) {
+  .abstract-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
