@@ -273,7 +273,7 @@
       <h2 class="title is-3 has-text-centered">Abstract</h2>
       <div class="content has-text-justified">
           <p>
-            Recent multimodal large language models have shown great promise in clinical image reasoning, but existing post-training pipelines remain predominantly outcome-centric, relying on final answer correctness or sequence-level preferences. This suffers from sparse credit assignment, making it difficult to optimize the reasoning process essential for clinical applications. Our analysis reveals that cascading errors from early-stage reasoning failures are a leading cause of incorrect predictions in medical visual question answering (VQA) benchmarks. Motivated by this, we propose <strong>M</strong>edical <strong>R</strong>easoning-aware <strong>P</strong>olicy <strong>O</strong>ptimization (<strong>MRPO</strong>), an RL algorithm that incorporates step-wise process rewards. When the final answer is incorrect, MRPO assigns exponentially larger penalties to tokens in earlier invalid reasoning steps, breaking failure cascades without compromising successful paths. Across three multimodal LLM backbones, MRPO consistently outperforms standard GRPO and a recent RL baseline, and on Qwen3-VL-8B-Thinking even surpasses substantially larger medical MLLMs such as HuatuoGPT-Vision-34B by 4.59 points. Moreover, MRPO reduces early-stage reasoning failures from 58.6% to 13.4%, showing that targeted mitigation of cascading failures improves both reasoning quality and final answer accuracy.
+            Recent multimodal large language models have shown great promise in clinical image reasoning, but existing post-training pipelines remain predominantly outcome-centric, relying on final answer correctness or sequence-level preferences. This suffers from sparse credit assignment, making it difficult to optimize the reasoning process essential for clinical applications. Our analysis reveals that cascading errors from early-stage reasoning failures are a leading cause of incorrect predictions in medical visual question answering (VQA) benchmarks. Motivated by this, we propose <strong>M</strong>edical <strong>R</strong>easoning-aware <strong>P</strong>olicy <strong>O</strong>ptimization (<strong>MRPO</strong>), an RL algorithm that incorporates step-wise process rewards. When the final answer is incorrect, MRPO assigns exponentially larger penalties to tokens in earlier invalid reasoning steps, breaking failure cascades without compromising successful paths. Across four multimodal LLM backbones, MRPO consistently outperforms standard GRPO and a recent RL baseline, and on Qwen3-VL-8B-Thinking even surpasses substantially larger medical MLLMs such as HuatuoGPT-Vision-34B by 4.59 points. Moreover, MRPO reduces early-stage reasoning failures from 58.6% to 13.4%, showing that targeted mitigation of cascading failures improves both reasoning quality and final answer accuracy.
           </p>
       </div>
     </div>
@@ -323,7 +323,7 @@
       <h2 class="title is-3 has-text-centered">Results</h2>
       <div class="content has-text-justified">
         <p>
-          MRPO consistently improves answer accuracy over standard GRPO and the recent RL baseline GDPO across all three backbones, on both in-distribution and out-of-distribution medical VQA benchmarks. On Qwen3-VL-8B-Thinking, MRPO raises the average out-of-distribution score from 26.73 to 30.74 (+4.01 points). Trained on only 13K samples, this model outperforms all general-purpose and medical MLLMs we evaluate regardless of scale, even surpassing the substantially larger HuatuoGPT-Vision-34B by 4.59 points. Unlike SFT, which fails to transfer out of distribution, MRPO yields consistent gains on both, indicating that step-wise advantage reshaping induces transferable reasoning rather than overfitting.
+          MRPO consistently improves answer accuracy over standard GRPO and the recent RL baseline GDPO across all four backbones, on both in-distribution and out-of-distribution medical VQA benchmarks. On Qwen3-VL-8B-Thinking, MRPO raises the average out-of-distribution score from 26.73 to 30.74 (+4.01 points). Trained on only 13K samples, this model outperforms all general-purpose and medical MLLMs we evaluate regardless of scale, even surpassing the substantially larger HuatuoGPT-Vision-34B by 4.59 points. Unlike SFT, which fails to transfer out of distribution, MRPO yields consistent gains on both, indicating that step-wise advantage reshaping induces transferable reasoning rather than overfitting.
         </p>
       </div>
 
@@ -338,7 +338,7 @@
         <img src="static/images/performance_2.png" alt="Cross-backbone ablation of training methods" loading="lazy"/>
       </figure>
       <p class="has-text-left" style="margin-top: 1rem;">
-        <strong>Cross-backbone ablation of training methods.</strong> We compare MRPO against the base model, SFT, GRPO, and GDPO on three backbones, namely Qwen2.5-VL-7B-Instruct, Qwen3-VL-8B-Instruct, Qwen3-VL-8B-Thinking, and InternVL3-8B-Instruct.
+        <strong>Cross-backbone ablation of training methods.</strong> We compare MRPO against the base model, SFT, GRPO, and GDPO on four backbones, namely Qwen2.5-VL-7B-Instruct, Qwen3-VL-8B-Instruct, Qwen3-VL-8B-Thinking, and InternVL3-8B-Instruct.
       </p>
     </div>
   </div>
